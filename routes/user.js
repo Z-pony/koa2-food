@@ -2,11 +2,18 @@ const router = require('koa-router')()
 
 router.prefix('/api/user')
 
-router.get('/', function (ctx, next) {
-  ctx.body = 'this is a users response!'
+router.post('/login', async(ctx, next)=>{
+  const {username, password} = ctx.request.body
+  ctx.body={
+    code: 200,
+    data: {
+      username,
+      password
+    }
+  }
 })
 
-router.get('/session-test', async function (ctx, next) {
+router.get('/login', async function (ctx, next) {
   if (ctx.session) {
     if (!ctx.session.viewCount) {
       ctx.session.viewCount = 0

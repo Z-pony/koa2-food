@@ -6,8 +6,8 @@ const bodyparser = require('koa-bodyparser')
 const logger = require('koa-logger')
 const session = require('koa-generic-session')
 const redisStore = require('koa-redis')
+const {REDIS_CONF} = require('./conf/db')
 
-const index = require('./routes/index')
 const users = require('./routes/user')
 
 // error handler
@@ -40,12 +40,13 @@ app.use(session({
 
   // 配置redis
   store: redisStore({
-    all: '127.0.0.1:6379', //写死本地的redis
+    // all: '127.0.0.1:6379', //写死本地的redis
+    all: `${REDIS_CONF.host}:${REDIS_CONF.port}`
   })
 }))
 
 // routes
-app.use(index.routes(), index.allowedMethods())
+// app.use(index.routes(), index.allowedMethods())
 app.use(users.routes(), users.allowedMethods())
 
 // error-handling
