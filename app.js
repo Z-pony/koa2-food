@@ -7,10 +7,9 @@ const logger = require('koa-logger');
 const session = require('koa-generic-session');
 const redisStore = require('koa-redis');
 const { REDIS_CONF } = require('./conf/db');
-
 const users = require('./routes/user');
-
 // error handler
+
 onerror(app);
 // middlewares
 app.use(bodyparser({
@@ -18,7 +17,6 @@ app.use(bodyparser({
 }));
 app.use(json());
 app.use(logger());
-
 // logger
 app.use(async (ctx, next) => {
 
