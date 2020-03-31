@@ -9,6 +9,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "dependencies": {
+    "cross-env": "^7.0.2",
     "koa": "^2.7.0",
     "koa-bodyparser": "^4.2.1",
     "koa-convert": "^1.2.0",
@@ -28,6 +29,7 @@
   },
   "devDependencies": {
     "debug": "^4.1.1",
+    "eslint": "^6.8.0",
     "nodemon": "^1.19.1"
   }
 }
