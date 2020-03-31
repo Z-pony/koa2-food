@@ -183,13 +183,10 @@ module.exports = {
      //////////////
     // ES6.相关 //
     //////////////
-    "import/no-extraneous-dependencies": ["error", {
-      devDependencies: true
-    }],
     "arrow-body-style": 2,  // 要求箭头函数体使用大括号
     "arrow-parens": 2,      // 要求箭头函数的参数使用圆括号
     "arrow-spacing":[2,{ "before": true, "after": true }],
-    "constructor-super": 0, // 强制在子类构造函数中用super()调用父类构造函数，TypeScrip的编译器也会提示
+    "constructor-super": 2, // 强制在子类构造函数中用super()调用父类构造函数，TypeScrip的编译器也会提示
     "no-const-assign":2,    // 禁止修改 const 声明的变量
     "no-dupe-class-members":2,   // 禁止类成员中出现重复的名称
     "no-this-before-super": 2,   // 禁止在构造函数中，在调用 super() 之前使用 this 或 super
