@@ -11,7 +11,7 @@ if (env === 'dev'){
     'host': 'localhost',
     'user': 'root',
     'password': '12345678',
-    'database': 'food-city'
+    'database': 'food_city'
   };
 
   // redis
