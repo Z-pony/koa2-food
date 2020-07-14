@@ -10,8 +10,10 @@ if (env === 'dev'){
   MYSQL_CONF = {
     'host': 'localhost',
     'user': 'root',
+    // 'password': '12345678',
     'password': '12345678',
-    'database': 'food_city'
+    'database': 'food_city',
+    'port': '3306',
   };
 
   // redis

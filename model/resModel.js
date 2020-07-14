@@ -20,16 +20,21 @@ class BaseModel{
 class SuccessModel extends BaseModel{
   constructor (data, message){
     super(data, message);
-
     this.errno = 0;
+    if(!this.message){
+      this.message = '成功'
+    }
   }
 }
 
 class ErrorModel extends BaseModel{
   constructor (data, message){
     super(data, message);
-
     this.errno = -1;
+    if(!this.message){
+      this.message = '失败'
+      
+    }
   }
 }
 

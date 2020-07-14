@@ -8,6 +8,7 @@ router.prefix('/api/user');
 router.post('/login', async (ctx, next) => {
   const { username, password } = ctx.request.body;
   const data = await login(username, password);
+  console.log(data)
 
   if (data.username){
 
@@ -23,18 +24,16 @@ router.post('/login', async (ctx, next) => {
 
 // 注册
 router.post('/regist', async (ctx, next) => {
-  const { username, password } = ctx.request.body;
+  const { username, password, phoneNumber } = ctx.request.body;
 
-  console.log(username, password, 111);
+  if (username && password && phoneNumber){
+    const data = await regist(username, password, phoneNumber);
 
-  if (username){
-    const data = await regist(username, password);
-
-    ctx.body = new SuccessModel('成功');
+    ctx.body = new SuccessModel();
 
     return;
   }
-  ctx.body = new SuccessModel('失败');
+  ctx.body = new ErrorModel('信息填不完整！');
 });
 
 module.exports = router;
